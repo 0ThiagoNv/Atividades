@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Digite uma letra e descubra se é vogal ou consoante");
+
+        Scanner scan = new Scanner(System.in);
+        char letra;
+        letra = scan.next().toLowerCase().charAt(0);
+
+        switch (letra){
+            case 'a':
+            case 'e':
+            case 'i':
+            case 'o':
+            case 'u':
+                System.out.println("A letra " + letra + " é uma vogal");
+                break;
+            default:
+                if (letra >= 'a' && letra <= 'z'){
+                    System.out.println("A letra " + letra + " é uma consoante");
+                }else {
+                    System.out.println("[Erro]");
+                }
+
+        }
+    }
+}
