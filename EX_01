@@ -4,8 +4,8 @@ public class Main {
     public static void main(String[] args) {
         System.out.println("Digite um número inteiro e descubra se ele é Ímpar ou Par: ");
 
-        Scanner digiteNumero = new Scanner(System.in);
-        int numero = digiteNumero.nextInt();
+        Scanner scan = new Scanner(System.in);
+        int numero = scan.nextInt();
 
         if(numero % 2 == 0) {
             System.out.println("Seu número " + numero + " é Par");
