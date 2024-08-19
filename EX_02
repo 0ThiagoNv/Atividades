@@ -5,12 +5,11 @@ public class Main {
         System.out.println("Digite dois números e veja qual é o maior");
 
         System.out.println("Digite o primeiro número: ");
-        Scanner digiteNumero1 = new Scanner(System.in);
-        int numero1 = digiteNumero1.nextInt();
+        Scanner scan = new Scanner(System.in);
+        int numero1 = scan.nextInt();
 
         System.out.println("Digite o segundo número: ");
-        Scanner digiteNumero2 = new Scanner(System.in);
-        int numero2 = digiteNumero2.nextInt();
+        int numero2 = scan.nextInt();
 
         if(numero1 > numero2) {
             System.out.println(numero1 + " é maior!");
