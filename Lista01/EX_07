@@ -1,0 +1,41 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+        System.out.println("Interrogatório! Esta é a chance de provar sua inocência... ou condenar-se de vez.");
+        System.out.println("Digite 'S' para sim ou 'N' para não: ");
+
+        Scanner scan = new Scanner(System.in);
+
+        String[] perguntas = {
+        "Você telefonou para vítima?", "Você esteve no local do crime?", "Você mora perto da vítima?", "Você tinha dívida com a vítima?", "Você já trabalhou com a vítima?"
+        };
+
+        int respostaSim = 0;
+
+        for(int i = 0; i < perguntas.length; i++) {
+            char resposta;
+            while(true){
+                System.out.println(perguntas[i]);
+                resposta = scan.next().toUpperCase().charAt(0);
+                if(resposta == 'S'){
+                    respostaSim++;
+                    break;
+                }else if (resposta == 'N'){
+                    break;
+                }else{
+                    System.out.println("Resposta inválida! Responda novamente: ");
+                }
+            }
+        }
+        if(respostaSim == 2){
+            System.out.println("Você é suspeito(a)!");
+        }else if(respostaSim > 2 && respostaSim <= 4){
+            System.out.println("Você é cúmplice!");
+        }else if(respostaSim == 5){
+            System.out.println("Você é o assasino(a)!");
+        }else{
+            System.out.println("Você é inocente!");
+        }
+    }
+}
