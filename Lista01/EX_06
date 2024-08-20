@@ -1,0 +1,30 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+
+        Scanner scan = new Scanner(System.in);
+        char turno;
+
+        while(true) {
+            System.out.println("Para informar seu turno, Digite: M = Matutino, V = Vespertino ou N = Noturno: ");
+            turno = scan.next().toUpperCase().charAt(0);
+
+            switch (turno) {
+                case 'M':
+                    System.out.println("Bom dia!");
+                    break;
+                case 'V':
+                    System.out.println("Boa tarde!");
+                    break;
+                case 'N':
+                    System.out.println("Boa noite!");
+                    break;
+                default:
+                    System.out.println("Valor inválido!");
+                    continue;
+            }
+            break;
+        }
+    }
+}
