@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Finalizar Carrinho");
+        System.out.println("Digite o valor de sua compra: ");
+
+        Scanner compra = new Scanner(System.in);
+        double suaCompra = compra.nextDouble();
+        double porcentagem = 15.0;
+
+        double desconto = (porcentagem / 100) * suaCompra;
+        double valorFinal = suaCompra - desconto;
+
+        System.out.printf("O valor de sua compra com desconto é: %.2f", valorFinal);
+
+    }
+}
