@@ -1,0 +1,26 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Digite as suas notas!");
+
+        Scanner notas = new Scanner(System.in);
+
+        System.out.println("Digite a primeira nota: ");
+        float nota1 = (float) notas.nextFloat();
+        System.out.println("Digite a segunda nota: ");
+        float nota2 = (float) notas.nextFloat();
+        System.out.println("Digite a terceira nota: ");
+        float nota3 = (float) notas.nextFloat();
+
+        float media = (nota1 + nota2 + nota3) / 3;
+
+        System.out.printf("Sua média foi: %.1f ", media);
+
+        if(media >= 6){
+            System.out.println("Parabéns, você foi aprovado!");
+        }else{
+            System.out.println("Você foi reprovado");
+        }
+    }
+}
