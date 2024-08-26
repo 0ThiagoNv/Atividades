@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite um numero para determinar o limite: ");
+        int n = scan.nextInt();
+
+        int numero = 0;
+
+        while (numero <= n) {
+            System.out.println(numero);
+            numero++;
+        }
+    }
+}
