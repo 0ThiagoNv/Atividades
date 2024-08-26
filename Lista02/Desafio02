@@ -1,0 +1,35 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args){
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite quantos números você deseja digitar: ");
+
+        int quantidade = scan.nextInt();
+        int[] numeros = new int[quantidade];
+        int somaNumeros = 0;
+
+        for(int i = 0; i < quantidade; i++){
+            System.out.println("Digite um numero: ");
+            numeros[i] = scan.nextInt();
+            somaNumeros += numeros[i];
+        }
+
+        int menorNumero = numeros[0];
+        int maiorNumero = numeros[0];
+
+        for (int i = 1; i < quantidade; i++){
+            if(numeros[i] < menorNumero){
+                menorNumero = numeros[i];
+            }
+            if(numeros[i] > maiorNumero){
+                maiorNumero = numeros[i];
+            }
+        }
+        System.out.println("Menor numero é: " + menorNumero);
+        System.out.println("Maior numero é: " + maiorNumero);
+        System.out.println("A soma de todos os numeros é: " + somaNumeros);
+    }
+}
