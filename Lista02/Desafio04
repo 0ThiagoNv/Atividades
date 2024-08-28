@@ -1,0 +1,49 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        Scanner scan = new Scanner(System.in);
+
+        System.out.println("Digite seu nome (deve ter mais que 3 caracteres): ");
+        String nome = scan.nextLine();
+        while (nome.length() <= 3) {
+            System.out.println("[ERRO] Digite um nome com mínimo de 3 caracteres.");
+            nome = scan.nextLine();
+        }
+
+        System.out.println("Digite sua idade (entre 0 e 150): ");
+        int idade = scan.nextInt();
+        while (idade < 0 || idade > 150) {
+            System.out.println("Idade inválida! Deve estar entre 0 e 150.");
+            idade = scan.nextInt();
+        }
+
+        System.out.println("Digite seu salário (deve ser maior que zero): ");
+        double salario = scan.nextDouble();
+        while (salario <= 0) {
+            System.out.println("Salário inválido! Deve ser maior que zero.");
+            salario = scan.nextDouble();
+        }
+
+        System.out.println("Digite seu sexo ('f' para feminino ou 'm' para masculino): ");
+        char sexo = scan.next().toLowerCase().charAt(0);
+        while (sexo != 'f' && sexo != 'm') {
+            System.out.println("Sexo inválido! Digite 'f' para feminino ou 'm' para masculino.");
+            sexo = scan.next().toLowerCase().charAt(0);
+        }
+
+        System.out.println("Digite seu estado civil ('s' para solteiro(a), 'c' para casado(a), 'v' para viúvo(a), 'd' para divorciado(a)): ");
+        char estadoCivil = scan.next().toLowerCase().charAt(0);
+        while (estadoCivil != 's' && estadoCivil != 'c' && estadoCivil != 'v' && estadoCivil != 'd') {
+            System.out.println("Estado civil inválido! Digite 's', 'c', 'v' ou 'd'.");
+            estadoCivil = scan.next().toLowerCase().charAt(0);
+        }
+
+        System.out.println("Seu nome é: " + nome);
+        System.out.println("Sua idade é: " + idade);
+        System.out.println("Seu salário é: " + salario);
+        System.out.println("Seu sexo é: " + sexo);
+        System.out.println("Seu estado civil: " + estadoCivil);
+    }
+}
