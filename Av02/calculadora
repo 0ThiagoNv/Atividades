@@ -3,37 +3,65 @@ import java.util.Scanner;
 public class AtvGit {
     public static void main(String[] args){
 
-        Scanner scan = new Scanner(System.in);
+        while(true) {
 
-        System.out.println("============");
-        System.out.println("Calculadora");
-        System.out.println("============");
+            Scanner scan = new Scanner(System.in);
 
-        double numero1, numero2, total;
-        int operacao;
+            System.out.println("============");
+            System.out.println("Calculadora");
+            System.out.println("============");
 
-        System.out.println("Digite o primerio numero: ");
-        numero1 = scan.nextDouble();
-        System.out.println("Digite o segundo numero: ");
-        numero2 = scan.nextDouble();
+            double numero1, numero2, total;
+            int operacao;
 
-        System.out.println("""
-                Qual operação deseja fazer?
-                1 | Soma
-                2 | Subtração
-                3 | Divisão
-                4 | Multiplicação""");
-        operacao = scan.nextInt();
+            System.out.println("Digite o primerio numero: ");
+            numero1 = scan.nextDouble();
+            System.out.println("Digite o segundo numero: ");
+            numero2 = scan.nextDouble();
 
-        while(operacao < 1 || operacao > 4){
-            System.out.println("Opção invalida!");
-            System.out.println("Digite novamente: ");
+            System.out.println("""
+                    Qual operação deseja fazer?
+                    1 | Soma
+                    2 | Subtração
+                    3 | Divisão
+                    4 | Multiplicação""");
             operacao = scan.nextInt();
-        }
-        if(operacao == 1){
-            total = numero1 + numero2;
-            System.out.printf("A soma dos valores : %.2f + %.2f = %.2f", numero1, numero2, total);
-        }
 
+            while (operacao < 1 || operacao > 4) {
+                System.out.println("Opção invalida!");
+                System.out.println("Digite novamente: ");
+                operacao = scan.nextInt();
+            }
+            if (operacao == 1) {
+                total = numero1 + numero2;
+                System.out.printf("A soma dos valores é: %.2f + %.2f = %.2f\n", numero1, numero2, total);
+            } else if (operacao == 2) {
+                total = numero1 - numero2;
+                System.out.printf("A subtração dos valores é: %.2f - %.2f = %.2f\n", numero1, numero2, total);
+            } else if (operacao == 3) {
+                total = numero1 / numero2;
+                if(numero2 == 0){
+                    System.out.println("""
+                            Não é possível dividir por zero
+                            Digite os numeros novamente: """);
+                    continue;
+                }
+                System.out.printf("A divisão dos valores é: %.2f / %.2f = %.2f\n", numero1, numero2, total);
+
+            } else if (operacao == 4) {
+                total = numero1 * numero2;
+                System.out.printf("A multiplicação dos valores é: %.2f * %.2f = %.2f\n", numero1, numero2, total);
+            }
+            System.out.println("Digite uma opção: ");
+            System.out.println("1 | SIM");
+            System.out.println("2 | NÃO");
+
+            int escolha = scan.nextInt();
+            
+            if(escolha == 2){
+                return;
+            }
+        }
+        
     }
 }
